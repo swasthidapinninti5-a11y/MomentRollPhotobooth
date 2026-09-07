@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MOMENT Roll — Digital Photobooth</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HOME -->
+    <main id="home" class="page active">
+
+        <nav class="navbar">
+            <div class="logo">MOMENT Roll</div>
+            <div class="nav-label">DIGITAL PHOTOBOOTH</div>
+        </nav>
+
+        <section class="hero">
+
+            <div class="hero-small">
+                YOUR CAMERA ROLL,
+                <span>BUT BETTER.</span>
+            </div>
+
+            <h1>
+                CAPTURE<br>
+                THE <i>MOMENT.</i>
+            </h1>
+
+            <p class="hero-description">
+                A little corner of the internet made for
+                silly faces, good memories & too many pictures.
+            </p>
+
+            <button
+                class="theme-button"
+                id="startButton"
+            >
+                START <span>↗</span>
+            </button>
+
+        </section>
+
+        <footer>
+            <span>MOMENT Roll © 2026</span>
+            <span>MADE FOR MEMORIES ✦</span>
+        </footer>
+
+    </main>
+
+
+    <!-- PHOTOBOOTH -->
+    <main id="booth" class="page">
+
+        <nav class="booth-navbar">
+
+            <button
+                id="backButton"
+                class="back-button"
+            >
+                ← BACK
+            </button>
+
+            <div id="boothThemeName">
+                VINTAGE
+            </div>
+
+            <div class="photo-count">
+                <span id="photoCounter">0</span> / 4
+            </div>
+
+        </nav>
+
+
+        <section class="booth-layout">
+
+            <!-- CAMERA -->
+            <div class="camera-section">
+
+                <div class="camera-frame">
+
+                    <video
+                        id="video"
+                        autoplay
+                        playsinline
+                        muted
+                    ></video>
+
+                    <div class="camera-overlay">
+                        <span>REC</span>
+                        <span class="record-dot"></span>
+                    </div>
+
+                    <div
+                        id="countdown"
+                        class="countdown"
+                    ></div>
+
+                    <div
+                        id="cameraMessage"
+                        class="camera-message"
+                    >
+                        CAMERA READY
+                    </div>
+
+                </div>
+
+
+                <div class="camera-controls">
+
+                    <button
+                        id="captureButton"
+                        class="capture-button"
+                        aria-label="Take photo"
+                    >
+                        <span class="capture-inner"></span>
+                    </button>
+
+                </div>
+
+
+                <p class="camera-help">
+                    click the button & let the countdown do its thing
+                </p>
+
+            </div>
+
+
+            <!-- PHOTO STRIP -->
+            <aside class="result-section">
+
+                <div class="result-heading">
+                    <span>YOUR STRIP</span>
+                    <span>04 PHOTOS</span>
+                </div>
+
+
+                <div
+                    id="photoStrip"
+                    class="photo-strip"
+                >
+
+                    <div class="empty-photo">
+                        <span>01</span>
+                    </div>
+
+                    <div class="empty-photo">
+                        <span>02</span>
+                    </div>
+
+                    <div class="empty-photo">
+                        <span>03</span>
+                    </div>
+
+                    <div class="empty-photo">
+                        <span>04</span>
+                    </div>
+
+                    <div class="strip-footer">
+                        MOMENT Roll ✦ 2026
+                    </div>
+
+                </div>
+
+
+                <!-- FILTERS -->
+                <div class="filter-section">
+
+                    <div class="filter-title">
+                        FILTER
+                    </div>
+
+                    <div class="filter-buttons">
+
+                        <button
+                            class="filter-button active"
+                            data-filter="normal"
+                        >
+                            ORIGINAL
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-filter="bw"
+                        >
+                            B&amp;W
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-filter="warm"
+                        >
+                            WARM
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-filter="soft"
+                        >
+                            SOFT
+                        </button>
+
+                        <button
+                            class="filter-button"
+                            data-filter="grain"
+                        >
+                            GRAIN
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+                <div class="result-buttons">
+
+                    <button
+                        id="downloadButton"
+                        class="download-button"
+                        disabled
+                    >
+                        DOWNLOAD STRIP ↓
+                    </button>
+
+                    <button
+                        id="resetButton"
+                        class="reset-button"
+                    >
+                        START OVER ↻
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <canvas id="captureCanvas"></canvas>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
